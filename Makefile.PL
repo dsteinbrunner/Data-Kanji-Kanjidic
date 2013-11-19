@@ -15,6 +15,11 @@ $hyph =~ s!::!/!g;
 
 my $pm = "lib/$hyph.pm";
 
+# The name, but dashed.
+
+my $dash = $name;
+$dash =~ s!::!-!g;
+
 # The documentation file, in POD format.
 
 my $pod = $pm;
@@ -22,7 +27,7 @@ $pod =~ s!\.pm$!.pod!;
 
 # The repository.
 
-my $repo = "https://github.com/benkasminbullock/$hyph";
+my $repo = "https://github.com/benkasminbullock/$dash";
 
 WriteMakefile (
     NAME => $name,
